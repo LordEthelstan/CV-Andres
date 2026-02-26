@@ -1,0 +1,313 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=1.5 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Andres Melgoza CV},
+    pdfauthor={Jose Andres Melgoza Mendoza},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage[default, type1]{sourcesanspro}
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Jose Andres Melgoza Mendoza - Page \thepage{} of \pageref*{LastPage}}
+}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{
+    \needspace{4\baselineskip}
+    \Large\color{primaryColor}
+}{
+}{
+}{
+    \textbf{#1}\hspace{0.15cm}\titlerule[0.8pt]\hspace{-0.1cm}
+}[]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.3 cm
+}{
+    0.2 cm
+}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{1 cm, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\color{primaryColor}\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+\begin{document}
+\begin{header}
+    \fontsize{30 pt}{30 pt}
+    \textbf{Jose Andres Melgoza Mendoza}
+
+    \vspace{0.2 cm}
+    
+    \fontsize{14 pt}{14 pt}
+    Embedded Systems and FPGA Design Engineer
+
+
+    \vspace{0.3 cm}
+
+    \normalsize
+    \mbox{{\footnotesize\faMapMarker*}\hspace*{0.13cm}Madrid, Spain}%
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{mailto:andres.mel.men@gmail.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}andres.mel.men@gmail.com}}%
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{tel:623783344}{{\footnotesize\faPhone*}\hspace*{0.13cm}+34 623 78 3344}}%
+\end{header}
+
+\vspace{0.3 cm}
+
+\section{Summary}
+\begin{onecolentry}
+Embedded Systems and FPGA Engineer with 5+ years of experience in software development, hardware acceleration, and FPGA verification for space-grade systems. Extensive hands-on experience programming in C for real-time embedded systems, along with C++ for structured modularity and Python for automation, scripting, and tool integration. \\
+Experienced in AUTOSAR, ISO 26262, and ASPICE-compliant processes for safety-critical applications. Skilled in hardware/software co-design, modular software architecture, and performance tuning for constrained embedded environments. \\
+Familiar with MCAL, BSW, and complex driver integration in automotive ECUs. Actively contributed to cross-functional collaboration, debugging, and validation efforts. Passionate about innovation in embedded vision, real-time system design, and human-machine interaction, with a strong foundation in low-level systems programming and rigorous verification aligned with aerospace/ECSS standards.
+\end{onecolentry}
+
+
+\section{Technical Skills}
+\begin{onecolentry}
+\textbf{Languages:} C, C++, Python, VHDL, Bash, SQL \\
+\textbf{MCUs/SoCs:} STM32, MSP430, ARM Cortex-M, Xilinx Zynq, Artix-7 \\
+\textbf{RTOS:} FreeRTOS, Zephyr, CMSIS-RTOS \\
+\textbf{Tools:} Vivado, CubeIDE, Keil, IAR, Altium Designer, STM32CubeMX, ModelSim, QuestaSim, Sigasi, Synplify, CANoe, Lauterbach, J-Link, VectorCAST, Coverity, MISRA tools \\
+\textbf{Protocols:} SPI, I2C, UART, CAN, LIN \\
+\textbf{Linux:} Embedded Linux, Yocto, Buildroot, U-Boot, Device Tree \\
+\textbf{Build Systems:} Make, CMake \\
+\textbf{Advanced:} REST API integration, Protocol Buffers \\
+\textbf{Verification:} VHDL testbenches, QuestaSim/ModelSim, UCDB coverage, SystemVerilog Assertions \\
+\textbf{Requirements \& Standards:} ECSS standards, IBM DOORS, SUMO requirement tracing \\
+\textbf{Team/DevOps:} Git, GitLab CI, Jenkins, Jira, IBM Rational Team Concert (RTC) \\
+\textbf{Documentation:} LaTeX, IBM DOORS, R4J
+\end{onecolentry}
+
+\section{Experience}
+
+\begin{twocolentry}{
+Madrid, Spain
+
+Feb 2026 -- Present
+}
+\textbf{Exceltic}, FPGA Design Engineer (Thales Alenia Space – CTEG Project)
+\begin{highlights}
+    \item Implemented VHDL modules for ADC housekeeping (HK), including telemetry acquisition, monitoring, and reporting.
+    \item Designed PLL scrubbing logic to detect and recover from lock issues for satellite platforms.
+    \item Built unit-level testbenches and simulation checks to validate new VHDL blocks before integration.
+\end{highlights}
+\end{twocolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+Madrid, Spain
+
+May 2025 -- Jan 2026
+}
+\textbf{Exceltic}, FPGA Verification Engineer (Thales Alenia Space – CTEG Project)
+\begin{highlights}
+    \item Verification engineer for the CTEG (Configurable Telecommunication Gateway), a space-grade FPGA-based secure router for satellite communications.
+    \item Developed and executed VHDL testbenches to validate telecommand/telemetry flows, ensuring encryption/decryption compliance with ESU interfaces.
+    \item Performed coverage analysis (QuestaSim/UCDB) and created requirement traceability matrices (DOORS, SUMO) to guarantee full functional verification of FPGA requirements.
+    \item Debugged timing, protocol, and error-handling scenarios (timeouts, busy signals, authentication failures, bit errors) at simulation level.
+    \item Coordinated with cross-site teams (Spain, France, Italy) to align design changes with ECSS standards and project milestones.
+\end{highlights}
+\end{twocolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+Querétaro, Mexico
+
+Nov 2021 -- Sep 2024
+}
+\textbf{Visteon VTCQ}, Senior DiApps \& BMS Developer
+\begin{highlights}
+    \item Developed DiApps modules in C for vehicle HMI, including menu navigation, icon rendering, and display personalization based on vehicle state.
+    \item Programmed interaction logic between physical controls (buttons, rotary knobs) and software input handlers using C.
+    \item Maintained and extended BMS communication layers using UDS over CAN, with diagnostics and status reporting logic.
+    \item Wrote and reviewed ASPICE-compliant documentation: SRD, SRS, LLD, HLD.
+    \item Debugged embedded software with Lauterbach (TRACE32) and Vector CANoe across multiple integration stages.
+    \item Participated in software/hardware integration events (SW/HW Bring-up) for pre-production units.
+    \item Worked with cross-functional teams to define ARXML interfaces and signal mappings using Vector tools.
+    \item Collaborated on low-level software configuration using DaVinci Configurator/Developer.
+\end{highlights}
+\end{twocolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+Querétaro, Mexico
+
+Feb 2018 -- Mar 2019
+}
+\textbf{Samsung Electronics}, Automation \& Vision Systems Engineer
+\begin{highlights}
+    \item Designed machine vision systems using OpenCV in C++ and Python to detect defects in real-time during manufacturing.
+    \item Developed FPGA-based hardware acceleration for convolutional filters, offloading image preprocessing tasks.
+    \item Trained lightweight convolutional neural networks and deployed them using fixed-point logic in VHDL.
+    \item Integrated HMIs and PLCs to control robotic test benches based on visual classification outcomes.
+    \item Validated end-to-end pipeline from image capture to robotic actuation under tight timing constraints.
+\end{highlights}
+\end{twocolentry}
+
+\section{Education}
+\begin{threecolentry}{\textbf{M.Sc.}}{
+2019 -- 2021
+}
+\textbf{Instituto Tecnológico de Morelia}, Digital Electronics \\
+Thesis: “Neural Network Architectures in FPGA/FPSoC” \\
+Developed VHDL auto-generation from TensorFlow-trained networks. \\
+Focused coursework on digital signal processing, ASIC design, and hardware acceleration techniques.
+\end{threecolentry}
+
+\vspace{0.2 cm}
+
+\begin{threecolentry}{\textbf{B.Sc.}}{
+2012 -- 2018
+}
+\textbf{Instituto Tecnológico de Morelia}, Electronics Engineering (Embedded Systems)
+\end{threecolentry}
+
+\section{Certifications}
+\begin{onecolentry}
+\begin{highlightsforbulletentries}
+\item Udemy: Advanced C Programming
+\item Vision Technologies and Techniques
+\item High Voltage Safety and PPE
+\item 7º Encuentro Regional de Energía Renovable
+\item XXIV Congreso Internacional TECNOTRONICA
+\end{highlightsforbulletentries}
+\end{onecolentry}
+
+\section{Publications}
+\begin{twocolentry}{
+2021
+}
+\textbf{“FPGA/FPSoC Neural Networks for Performance-Based Design”} \\
+Published at Academia Journals. Presented inference from BNN on Artix-7.
+\end{twocolentry}
+
+\section{Languages}
+\begin{onecolentry}
+\textbf{Spanish:} Native \hfill \textbf{English:} Fluent \hfill \textbf{German:} Basic
+\end{onecolentry}
+
+\section{Soft Skills}
+\begin{onecolentry}
+\begin{highlightsforbulletentries}
+\item Agile/Scrum collaboration
+\item Mentoring junior developers
+\item Technical decision-making under pressure
+\item Fast adaptation to legacy codebases
+\item Clear technical communication across teams
+\end{highlightsforbulletentries}
+\end{onecolentry}
+
+\section{References}
+\begin{onecolentry}
+\textbf{Silvia Ramirez} -- \href{mailto:silvia.ramirez@visteon.com}{silvia.ramirez@visteon.com} \\
+\textbf{Dr. Arturo Mendez Patino} -- \href{mailto:arturo.mp@morelia.tecnm.mx}{arturo.mp@morelia.tecnm.mx}
+\end{onecolentry}
+
+\end{document}
