@@ -14,6 +14,7 @@
 \usepackage{array}
 \usepackage[dvipsnames]{xcolor}
 \definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{fontawesome5}
 \usepackage{amsmath}
@@ -134,6 +135,8 @@
 }
 \let\hrefWithoutArrow\href
 \renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+\newcommand{\companydatelogo}[2][2.2cm]{\vspace{0.16cm}\par\includegraphics[width=#1,keepaspectratio]{#2}}
+\newcommand{\samsungdatelogo}{\vspace{0.16cm}\par\includegraphics[width=2.2cm,trim=0 95bp 0 95bp,clip,keepaspectratio]{Icons/samsung_logo.png}}
 
 \begin{document}
 \begin{header}
@@ -188,6 +191,8 @@ Skilled in MCAL, BSW, and complex driver integration in automotive ECUs, and in 
 Madrid, Spain
 
 Feb 2026 -- Present
+
+\companydatelogo{Icons/Thales_Alenia_Space_Logo.png}
 }
 \textbf{Exceltic}, FPGA Design Engineer (Thales Alenia Space – CTEG Project)
 \begin{highlights}
@@ -203,6 +208,8 @@ Feb 2026 -- Present
 Madrid, Spain
 
 May 2025 -- Jan 2026
+
+\companydatelogo{Icons/Thales_Alenia_Space_Logo.png}
 }
 \textbf{Exceltic}, FPGA Verification Engineer (Thales Alenia Space – CTEG Project)
 \begin{highlights}
@@ -220,6 +227,8 @@ May 2025 -- Jan 2026
 Querétaro, Mexico
 
 Nov 2021 -- Sep 2024
+
+\companydatelogo{Icons/Visteon_logo.png}
 }
 \textbf{Visteon VTCQ}, Senior DiApps \& BMS Developer
 \begin{highlights}
@@ -240,6 +249,8 @@ Nov 2021 -- Sep 2024
 Querétaro, Mexico
 
 Feb 2018 -- Mar 2019
+
+\samsungdatelogo
 }
 \textbf{Samsung Electronics}, Automation \& Vision Systems Engineer
 \begin{highlights}
